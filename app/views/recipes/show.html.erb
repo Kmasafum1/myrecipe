@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= @recipe.title %></h5>
+          <p class="card-text"><%= simple_format @recipe.body %></p>
+          <p class="card-text">
+            <small class="text-muted">更新日：<%= @recipe.updated_at.strftime("%Y-%m-%d") %></small>
+          </p>
+          <td id="likes_buttons_<%= @recipe.id %>">
+            <%= render partial: 'likes/like', locals: { recipe: @recipe} %>
+          </td>
+          <% if @recipe.user == current_user %>
+          <%# レシピを投稿した人とログインユーザーが同じならば %>
+            <%= link_to '編集', edit_recipe_path(@recipe), class: "btn btn-success" %>
+            <%= link_to '削除', recipe_path(@recipe), method: :delete, class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>        
+
+<%# simple_formatを使うことで改行された文章もブラウザに反映できる %>
