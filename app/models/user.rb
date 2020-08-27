@@ -14,3 +14,4 @@ class User < ApplicationRecord
     #既にいいねしているかどうか
   end
 end
+

@@ -19,3 +19,4 @@ class UsersController < ApplicationController
     # ユーザーテーブル(ログインユーザーの)にある名前とemailを編集を許可する
   end  
 end
+

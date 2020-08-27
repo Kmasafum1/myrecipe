@@ -8,9 +8,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/25c2d80a1e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
 
   <body>
+  <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <%= link_to 'Myrecipe', root_path, class: "navbar-brand" %>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
@@ -19,18 +21,23 @@
       <% if user_signed_in? %>
         <div class="collapse navbar-collapse" id="Navber">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <%= link_to "マイページ", user_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "新規投稿", new_recipe_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "投稿一覧", recipes_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
-            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <%= link_to "マイページ", user_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "新規投稿", new_recipe_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "投稿一覧", recipes_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
+              </ul> 
+            </li>  
           </ul>
         </div>  
       <% else%>
@@ -55,5 +62,6 @@
       <div class="alert alert-danger" role="alert"><strong><%= alert %></strong></div>
     <% end %>
     <%= yield %>
+  </div>  
   </body>
 </html>
