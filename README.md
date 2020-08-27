@@ -2,7 +2,7 @@
 
 # ツール・ライブラリの名前
  
-recipelabo
+Myrecipe
  
 ## 簡単な説明
  
