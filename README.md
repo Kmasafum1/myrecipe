@@ -22,3 +22,26 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+
+## recipesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|title|string|
+|body|text|
+|user_id|integer|
+
+## likesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|
+|recipe_id|integer|
