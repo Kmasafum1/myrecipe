@@ -71,7 +71,7 @@ Chromeの最新版を利用してアクセスしてください。
 |Column|Type|Options|
 |------|----|-------|
 |name|string|
-|email|string|null: false, unique: true|
+|email|string|null: false|
 |password|string|null: false|
 
 Association
