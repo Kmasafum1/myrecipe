@@ -60,9 +60,11 @@ Chromeの最新版を利用してアクセスしてください。
  
 ## デプロイ
  
-1. heroku
-2. 
-3. 
+-heroku
+
+## テスト
+
+'rspec-rails', '~> 4.0.0.beta2'
 
 ## usersテーブル
 
